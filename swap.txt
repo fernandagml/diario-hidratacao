@@ -1,0 +1,4 @@
+npx create-expo-app@latest . --template blank
+npx expo start
+a
+npm i react-native-safe-area-context
