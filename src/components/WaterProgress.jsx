@@ -1,17 +1,17 @@
 import { View, Text, StyleSheet } from "react-native";
 
-export function WaterProgress({ waterProgress = 0, objetivo }) {
+export function WaterProgress({ waterProgress = 0, goal }) {
 
-    const porcentagem = Math.min(Math.floor((waterProgress / objetivo) * 100), 100);
+    const percentage = Math.min(Math.floor((waterProgress / goal) * 100), 100);
 
     const styles = StyleSheet.create({
-        barra: {
+        bar: {
             width: '100%',
             height: '20',
             backgroundColor: '#dfdfdf',
         },
-        barraPerc: {
-            width: porcentagem + '%',
+        barPerc: {
+            width: percentage + '%',
             height: '20',
             backgroundColor: '#2d82c9',
         },
@@ -19,9 +19,9 @@ export function WaterProgress({ waterProgress = 0, objetivo }) {
     return (
         <View>
             <Text>Você bebeu {waterProgress}mL de água hoje.</Text>
-            <Text>Você atingiu {porcentagem}% da meta!</Text>
-            <View style={styles.barra}>
-                <View style={styles.barraPerc} />
+            <Text>Você atingiu {percentage}% da meta!</Text>
+            <View style={styles.bar}>
+                <View style={styles.barPerc} />
             </View>
         </View>
     )

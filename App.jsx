@@ -14,10 +14,10 @@ export default function App() {
         <StatusBar barStyle="auto" />
 
         <View>
-          <Header objetivo={GOAL}/>
+          <Header goal={GOAL}/>
           {/*
           <ActionButton />*/}
-          <WaterProgress objetivo={GOAL} waterProgress={23865}/>
+          <WaterProgress goal={GOAL} waterProgress={60}/>
         </View>
 
       </SafeAreaView>
