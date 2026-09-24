@@ -2,7 +2,7 @@ import { View, Text, StyleSheet } from "react-native";
 
 export function WaterProgress({ waterProgress = 0, objetivo }) {
 
-    const porcentagem = Math.min(Math.round((waterProgress / objetivo) * 100), 100);
+    const porcentagem = Math.min(Math.floor((waterProgress / objetivo) * 100), 100);
 
     const styles = StyleSheet.create({
         barra: {
