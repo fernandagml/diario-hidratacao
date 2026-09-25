@@ -13,11 +13,16 @@ export function Header({goal}) {
 const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
+        marginBottom: 24,
     },
     title: {
         color: COLORS.primary,
+        fontSize: 22,
+        fontWeight: 'bold',
     },
     subtitle: {
-        backgroundColor: '#fff',
+        fontSize: 14,
+        color: COLORS.textMuted,
+        marginTop: 4,
     },
 })

@@ -17,7 +17,7 @@ export default function App() {
           <Header goal={GOAL}/>
           {/*
           <ActionButton />*/}
-          <WaterProgress goal={GOAL} waterProgress={60}/>
+          <WaterProgress goal={GOAL} waterProgress={200}/>
         </View>
 
       </SafeAreaView>
