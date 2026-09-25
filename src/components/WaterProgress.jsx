@@ -6,9 +6,9 @@ export function WaterProgress({ waterProgress = 0, goal }) {
     const percentage = Math.min(Math.floor((waterProgress / goal) * 100), 100);
 
     return (
-        <View>
-            <Text>Você bebeu {waterProgress}mL de água hoje.</Text>
-            <Text>Você atingiu {percentage}% da meta!</Text>
+        <View style={styles.card}>
+            <Text style={styles.consumedText}>{waterProgress} mL</Text>
+            <Text style={styles.percentageText}>Você atingiu {percentage}% da meta</Text>
             <View style={styles.progressBarBackground}>
                 <View style={[styles.progressBarFill, { width: `${percentage}%` }]} />
             </View>
