@@ -7,12 +7,12 @@ export function WaterGoal({ onAdd, onExc, goal, onReset }) {
         <View style={styles.card}>
             <Text style={styles.titleText}>Ajustar Meta Diária:</Text>
             <View style={styles.buttonRow}>
-                <Pressable style={styles.button} onPress={() => onAdd(200)}>
-                    <Text style={styles.buttonText}>+200 mL</Text>
+                <Pressable style={styles.button} onPress={() => onExc(250)}>
+                    <Text style={styles.buttonText}>-250 mL</Text>
                 </Pressable>
                 <Text style={styles.goalText}>{goal}mL</Text>
-                <Pressable style={styles.button} onPress={() => onExc(200)}>
-                    <Text style={styles.buttonText}>-200 mL</Text>
+                <Pressable style={styles.button} onPress={() => onAdd(250)}>
+                    <Text style={styles.buttonText}>+250 mL</Text>
                 </Pressable>
             </View>
             <Pressable style={styles.goalButton} onPress={() => onReset(2000)}>

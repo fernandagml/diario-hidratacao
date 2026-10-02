@@ -12,7 +12,9 @@ export function WaterProgress({ waterProgress = 0, goal }) {
             <View style={styles.progressBarBackground}>
                 <View style={[styles.progressBarFill, { width: `${percentage}%` }]} />
             </View>
-            <Text style={styles.incentiveText}>Continue bebendo água para atingir sua meta, faltam {goal - waterProgress} ml.</Text>
+            {waterProgress >= goal ? 
+            <Text style={styles.incentiveTextOk}>Parabéns! Você atingiu a sua meta diária de água de {goal}ml.</Text> : 
+            <Text style={styles.incentiveText}>Continue bebendo água para atingir sua meta, faltam {goal - waterProgress} ml.</Text>}
         </View>
     )
 }
@@ -52,6 +54,11 @@ const styles = StyleSheet.create({
         height: '100%',
         backgroundColor: COLORS.secondary,
         borderRadius: 6,
+    },
+    incentiveTextOk: {
+        color: '#2b8600',
+        textAlign: 'center',
+        marginTop: 15,
     },
     incentiveText:{
         color: COLORS.textMuted,

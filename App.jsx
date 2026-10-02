@@ -21,27 +21,35 @@ export default function App() {
   };
 
   const handleAddGoal = (ml) => {
-    setGoal(goal + ml)
-  }
+    if (goal < 10000) {
+      setGoal(goal + ml)
+    } else {
+      setGoal(10000)
+    };
+  };
 
   const handleExcGoal = (ml) => {
-    setGoal(goal - ml)
-  }
+    if (goal > 500) {
+      setGoal(goal - ml)
+    } else {
+      setGoal(500)
+    };
+  };
 
   const handleResetGoal = (ml) => {
     setGoal(2000)
-  }
-  
+  };
+
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
         <StatusBar barStyle="auto" />
 
         <View style={styles.content}>
-          <Header goal={goal}/>
-          <WaterGoal onAdd={handleAddGoal} onExc={handleExcGoal} goal={goal} onReset={handleResetGoal}/>
-          <WaterProgress goal={goal} waterProgress={consumed}/>
-          <ActionButton onAdd={handleAddWater} onReset={handleReset}/>
+          <Header goal={goal} />
+          <WaterGoal onAdd={handleAddGoal} onExc={handleExcGoal} goal={goal} onReset={handleResetGoal} />
+          <WaterProgress goal={goal} waterProgress={consumed} />
+          <ActionButton onAdd={handleAddWater} onReset={handleReset} />
           <HealthSent />
         </View>
 
