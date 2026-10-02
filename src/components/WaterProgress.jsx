@@ -12,6 +12,7 @@ export function WaterProgress({ waterProgress = 0, goal }) {
             <View style={styles.progressBarBackground}>
                 <View style={[styles.progressBarFill, { width: `${percentage}%` }]} />
             </View>
+            <Text>Continue bebendo água para atingir sua meta, faltam {goal - waterProgress} ml.</Text>
         </View>
     )
 }

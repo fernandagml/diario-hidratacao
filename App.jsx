@@ -3,20 +3,34 @@ import { COLORS } from "./src/constants/colors";
 import { Header } from "./src/components/Header";
 import { ActionButton } from "./src/components/ActionButtons";
 import { WaterProgress } from "./src/components/WaterProgress";
+import { WaterGoal } from "./src/components/WaterGoal";
+import { Health } from "./src/components/Health";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { useState } from "react";
 
 export default function App() {
   const [consumed, setConsumed] = useState(0);
-  const GOAL = 2000;
+  const [goal, setGoal] = useState(2000);
 
   const handleAddWater = (ml) => {
-    setConsumed((memoria) => memoria + ml);
+    setConsumed(consumed + ml);
   };
 
   const handleReset = () => {
     setConsumed(0);
   };
+
+  const handleAddGoal = (ml) => {
+    setGoal(goal + ml)
+  }
+
+  const handleExcGoal = (ml) => {
+    setGoal(goal - ml)
+  }
+
+  const handleResetGoal = (ml) => {
+    setGoal(2000)
+  }
   
   return (
     <SafeAreaProvider>
@@ -24,9 +38,11 @@ export default function App() {
         <StatusBar barStyle="auto" />
 
         <View style={styles.content}>
-          <Header goal={GOAL}/>
-          <WaterProgress goal={GOAL} waterProgress={consumed}/>
+          <Header goal={goal}/>
+          <WaterGoal onAdd={handleAddGoal} onExc={handleExcGoal} goal={goal} onReset={handleResetGoal}/>
+          <WaterProgress goal={goal} waterProgress={consumed}/>
           <ActionButton onAdd={handleAddWater} onReset={handleReset}/>
+          <Health />
         </View>
 
       </SafeAreaView>
