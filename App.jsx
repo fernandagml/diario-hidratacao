@@ -4,7 +4,7 @@ import { Header } from "./src/components/Header";
 import { ActionButton } from "./src/components/ActionButtons";
 import { WaterProgress } from "./src/components/WaterProgress";
 import { WaterGoal } from "./src/components/WaterGoal";
-import { Health } from "./src/components/Health";
+import { HealthSent } from "./src/components/HealthSent";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { useState } from "react";
 
@@ -42,7 +42,7 @@ export default function App() {
           <WaterGoal onAdd={handleAddGoal} onExc={handleExcGoal} goal={goal} onReset={handleResetGoal}/>
           <WaterProgress goal={goal} waterProgress={consumed}/>
           <ActionButton onAdd={handleAddWater} onReset={handleReset}/>
-          <Health />
+          <HealthSent />
         </View>
 
       </SafeAreaView>

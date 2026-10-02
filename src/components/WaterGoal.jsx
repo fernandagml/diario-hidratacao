@@ -76,5 +76,8 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         paddingVertical: 8,
         alignItems: 'center',
-    }
+    },
+    goalButtonText: {
+        color: COLORS.danger,
+    },
 });
